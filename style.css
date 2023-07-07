@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: #ffecd1;
     font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
@@ -15,6 +16,9 @@ body {
     margin: 0;
 }
 
+h2, h3 {
+    color: #001524;
+}
 .toggle-container {
     display: flex;
     align-items: center;
@@ -28,7 +32,7 @@ body {
 
 .label {
     position: relative;
-    background-color: #d0d0d0;
+    background-color: #ff7d00;
     border-radius: 50px;
     cursor: pointer;
     display: inline-block;
@@ -37,11 +41,11 @@ body {
     height: 40px;
 }
 .toggle:checked + .label {
-    background-color: #8e44ad;
+    background-color: #78290f;
 }
 
 .ball {
-    background: #fff;
+    background: #001524;
     height: 34px;
     width: 34px;
     border-radius: 50%;
@@ -50,11 +54,23 @@ body {
     left: 3px;
     align-items: center;
     justify-content: center;
-    animation: slideOn 0.3s linear forwards;
+    animation: slideOff 0.3s linear forwards;
 }
 
 .toggle:checked + .label .ball {
     animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      transform: translateX(20px) scale(1.2);
+    }
+    100% {
+      transform: translateX(40px) scale(1);
+    }
 }
 
 @keyframes slideOff {
